@@ -20,20 +20,20 @@ public class RiskAnalysisController {
 
     @GetMapping("/user/{idApp}")
     public QueryResult getUsers(@PathVariable String idApp) {
-        String vwrisk = "select * from vwusersgroupriskanalysis where id_app = " + idApp;
+        String vwrisk = "select * from vwusersgroupriskanalysis where id_app = '" + idApp +"'";
         return executeScript(vwrisk);
     }
 
 
     @GetMapping("/role/{idApp}")
     public QueryResult getRoles(@PathVariable String idApp) {
-        vwrisk = "select * from vwrolesriskanalysis where id_app = " + idApp;
+        vwrisk = "select * from vwrolesriskanalysis where id_app = '" + idApp +"'";
         return executeScript(vwrisk);
     }
 
     @GetMapping("/group/{idApp}")
     public QueryResult getGroups(@PathVariable String idApp) {
-        vwrisk = "select * from vwrolesgroupriskanalysis where id_app = " + idApp;
+        vwrisk = "select * from vwrolesgroupriskanalysis where id_app = '" + idApp +"'";
         return executeScript(vwrisk);
     }
 
